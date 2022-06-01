@@ -111,4 +111,4 @@ Tips
 
 To run a subset of tests::
 
-    $ py.test tests/test_oar
+    $ py.test tests

@@ -51,9 +51,9 @@ This documentation is organized into a few different sections below:
    :maxdepth: 1
    :caption: Developer Documentation
 
+   developer/contributing
    developer/installation
    developer/usage
-   developer/contributing
    developer/changes
    developer/release
 
