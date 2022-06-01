@@ -6,11 +6,11 @@ Welcome to OAR3's documentation!
    **THIS DOCUMENTATION IS UNDER CONSTRUCTION (NOT READY FOR PRODUCTION USE)**
 
 .. include:: ../README.rst
-             
+
 This documentation is organized into a few different sections below:
 
 * :ref:`ref-user-docs`
-* :ref:`ref-admin-docs`  
+* :ref:`ref-admin-docs`
 * :ref:`ref-dev-docs`
 * :ref:`ref-dev-changelog`
 * :ref:`Copyright and license <licensefile-anchor>`
@@ -20,7 +20,7 @@ This documentation is organized into a few different sections below:
 .. toctree::
    :maxdepth: 1
    :caption: User Documentation
-      
+
    user/quickstart
    user/usecases
    user/mechanisms

@@ -1,51 +1,62 @@
-Installation
-============
+.. _dev-install:
 
+Development methodology
+=======================
 
 Overview
 --------
 
-There are currently 3 methods to install OAR:
+This guide explain hox to install and run locally oar3 to develop new features or fix bugs.
 
-  - from the Debian packages (TBD)
-  - from the Nix/Nixos packages  (TBD)
-  - from sources  (TBD)
+Installation
+------------
 
+.. note::
 
-Alernatively, OAR can by evaluated through 2 ways:
-  - oar-docker (TBD)
-  - arion-oar (TBD)
+  This guide details how to install and run oar3 for developers.
+  If you want to install oar3 on a cluster, please follow :ref:`the administration installation guide<admin-install>`.
 
+There are currently 2 methods to install OAR:
 
-Before going further, please have in mind OAR's architecture. A common OAR
-installation is composed of:
+  - from source with :ref:`nix <nix-install>`.
+  - from sources with :ref:`poetry <poetry-install>`.
 
-  - a **server** which will hold all of OAR "smartness". That host will run
-    the OAR server daemon;
-  - one or more **frontends**, which users will have to login to, in order
-    to reserve computing nodes (oarsub, oarstat, oarnodes, ...);
-  - **computing nodes** (or basically *nodes*), where the jobs will execute;
-  - optionally a **visualisation server** which will host the
-    visualisation webapps (monika, drawgantt, ...);
-  - optionally an **API server**, which will host OAR restful API service.
+Alternatively, OAR can by evaluated through 2 ways:
+  - oar-docker-compose `oar-docker-compose <https://github.com/oar-team/oar-docker-compose>`_
+  - oar-docker (unmaintained for oar3)
 
-    
 Many OAR data are stored and archived in a **PostgreSQL** database.
 
+.. _poetry-install:
 
-Computing nodes
----------------
+Install from source with poetry
+-------------------------------
 
-Installation from the Debian packages
-_____________________________________
+*Dependencies*
 
-**Instructions**
+  - `poetry <https://python-poetry.org/docs/#installation>`_
+  - `postgresql` and `postgresql-client`, and `libpq` (headers file to link c programs)
+  - The sources of `oar3 <https://github.com/oar-team/oar3>`_
 
-*For the Debian like systems*::
+Once you have all the requirements installed, you can run the commands::
 
-  For now, only OAR's serie 2 versions is shipped as part of Debian official distributions. Version 3 is (will be) available at  http://oar.imag.fr/download#debian
+  poetry install # install the python dependencies
+  poetry shell # enter a shell
+  pytest tests # start the tests
 
-.. code:: bash
 
-          $ wget  http://oar.imag.fr/
-          
+.. _nix-install:
+
+Install from source with nix
+----------------------------
+
+*Dependencies*
+
+  - `nix <https://nixos.org/download.html>`_
+  - The sources of `oar3 <https://github.com/oar-team/oar3>`
+
+
+Once you have all the requirements installed, you can run the commands::
+
+  nix develop # enter a shell with oar dependencies
+  pytest tests # run the tests
