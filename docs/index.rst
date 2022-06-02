@@ -52,7 +52,7 @@ This documentation is organized into a few different sections below:
    :caption: Developer Documentation
 
    developer/contributing
-   developer/installation
+   developer/development_guidelines
    developer/usage
    developer/changes
    developer/release
