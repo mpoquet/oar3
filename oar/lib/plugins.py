@@ -3,6 +3,7 @@
     ~~~~~~~~~~~~~~~
 
     OAR plugin interface.
+    New plugins can be registered using the entry points mechanism.
 """
 
 import sys
@@ -15,6 +16,10 @@ else:
 
 
 def find_plugin_function(group: str, name: str):
+    """
+    For a given entry_point identified by its `group` find the function identified by `name`.
+    Return the function if found, otherwise return None.
+    """
     for found_name, func in find_plugin_for_entry_point(group):
         if name == found_name:
             return func
