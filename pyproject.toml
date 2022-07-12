@@ -71,6 +71,9 @@ resource_n_h_local = "oar.kao.custom_scheduling:find_resource_n_h_local"
 resource_hierarchies_scattered_local = "oar.kao.custom_scheduling:resource_hierarchies_scattered_local"
 local = "oar.kao.custom_scheduling:find_local"
 
+[tool.poetry.plugins."oar.jobs_sorting_func"]
+simple_priority = "oar.kao.custom_jobs_sorting:jobs_sorting_simple_priority"
+
 [tool.poetry.dependencies]
 python = ">=3.7, <4"
 SQLAlchemy-Utils = ">=0.37.3"
